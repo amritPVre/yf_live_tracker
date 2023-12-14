@@ -27,7 +27,7 @@ if st.button('Fetch Data') or ticker:
     # Show live price
     latest_price = get_latest_price(ticker)
     if latest_price is not None:
-        live_price_placeholder.metric(label=f"Latest price of {ticker}", value=f"${latest_price:.2f}")
+        live_price_placeholder.metric(label=f"Latest price of {ticker}", value=f"INR {latest_price:.2f}")
     else:
         live_price_placeholder.error(f"Could not retrieve the price for {ticker}. Try again later.")
 
