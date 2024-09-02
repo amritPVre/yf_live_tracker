@@ -3,7 +3,7 @@ import streamlit as st
 import plotly.graph_objs as go
 
 # Function to fetch the latest stock price
-@st.experimental_memo(ttl=30)  # Cache the function so it only updates every 30 seconds
+@st.cache_data(ttl=30)  # Cache the function so it only updates every 30 seconds
 def get_latest_price(ticker):
     data = yf.download(tickers=ticker, period="1d", interval="1m")
     if not data.empty:
